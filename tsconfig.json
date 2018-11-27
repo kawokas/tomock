@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2018",
+    "sourceMap": false,
+    "types" : ["node"]
+  },
+  "include": [
+      "src/mockGenerator.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+

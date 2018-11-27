@@ -1,0 +1,18 @@
+{
+  "name": "tomock",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:kawoka/tomock.git",
+  "author": "kawoka <br2jn51@yahoo.co.jp>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^10.12.5",
+    "fs": "^0.0.1-security",
+    "typescript": "^3.1.6"
+  },
+  "scripts": {
+    "tomock-generate": "node ./src/mockGenerator.js",
+    "build": "tsc",
+    "test-pre": "tsc ./src/mockGenerator.ts; node ./src/mockGenerator.js ./test/api/**"
+  }
+}
