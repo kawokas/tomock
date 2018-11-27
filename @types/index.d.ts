@@ -1,3 +1,7 @@
+interface HogeHoge {
+  hoge: string
+}
+
 interface TestObj {
   /** default: random */
   randomBool: boolean
