@@ -19,10 +19,3 @@ export const walkFiles = (
     ts.forEachChild(sourceFile, visitFunc)
   }
 }
-
-
-const program = ts.createProgram(fileNames, options)
-
-for (const sourceFile of program.getSourceFiles()) {
-  ts.forEachChild(sourceFile, visit)
-}

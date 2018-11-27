@@ -112,12 +112,3 @@ function parseDoc(doc: ts.SymbolDisplayPart[]): DocConfig {
 }
 
 main()
-
-
-const checker = program.getTypeChecker();
-...
-const visit = (node: ts.Node) => {
-  const symbol = checker.getSymbolAtLocation(node.name);
-  symbol.getDocumentationComment()
-}
-  => [{text: "hogehoge", kind: "text"}]
