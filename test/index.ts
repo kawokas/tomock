@@ -1,4 +1,4 @@
-// import * as mockMakers from '../out/mockMakers'
-//
-// const result = mockMakers.makeHogeHogeMock({hoge: 'override'})
-// console.log(result)
+import * as mockMakers from '../out/mockMakers'
+
+const result = mockMakers.makeTestObjMock({myString: 'override'})
+console.log(result)
