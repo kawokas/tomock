@@ -1,5 +1,5 @@
 # tomock
-tomock generate mocker functions from type definition
+Tomock is mocker functions generator from type definitions
 
 ## example
 ```bash
@@ -21,6 +21,7 @@ interface Hoge {
 ```
 
 ### run command
+
 ```bash
 yarn run tomock-generate @types/** ./out
 ```
