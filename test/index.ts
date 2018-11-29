@@ -1,4 +1,4 @@
-import * as mockMakers from '../out/mockMakers'
+import {makeUserMock} from '../out/mockMakers'
 
-const result = mockMakers.makeTestObjMock({myString: 'override'})
+const result = makeUserMock({tags: ['override', 'attributes']})
 console.log(result)

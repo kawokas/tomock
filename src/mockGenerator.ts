@@ -5,7 +5,9 @@ import * as util from 'util'
 const fileNames = process.argv.slice(2)
 const outpath = process.argv.slice(3) || './'
 
-const makerTemplate = (name: string, json: string) => `export const make${name}Mock = (payload: { [key in keyof ${name}]?: ${name}[key] } = {}): ${name} => {
+const makerTemplate = (name: string, json: string) => `export const make${name}Mock = (
+    payload: { [key in keyof ${name}]?: ${name}[key] } = {}
+  ): ${name} => {
   return Object.assign({}, ${json}, payload)
 }`
 
@@ -30,10 +32,6 @@ function main() {
         out.push(makerStr)
       }
     }
-    // TODO: namespaceの対応
-    // } else if (ts.isModuleDeclaration(node)) {
-    //    ts.forEachChild(node, childVisit);
-    // }
   })
   fs.writeFileSync(outpath + "/mockMakers.ts", out.join('\n\n'))
 }
@@ -55,11 +53,6 @@ function makeMockJson(symbol: ts.Symbol, checker: ts.TypeChecker):string {
 }
 
 function makeMockValue(typeNode: ts.TypeNode, checker: ts.TypeChecker, config?: DocConfig): string {
-  // TODO:
-  // - object
-  // - enum
-  // - namespaced interface
-
   switch (typeNode.kind) {
     case ts.SyntaxKind.StringKeyword:
       if(typeof config['default'] === "string") {

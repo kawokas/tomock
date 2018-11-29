@@ -1,23 +1,21 @@
 interface HogeHoge {
   hoge: string
+  num: number
+  flg: boolean
 }
 
-interface TestObj {
-  /** default: random */
-  randomBool: boolean
-  myString: string
+interface User {
   /** default: 山田 太郎*/
   name: string
-  /** default: 300.0*/
-  price: number
-  num: number
-  strArr: string[]
-  numArr: number[]
-  child: TestChild
-  childArr: TestChild[]
+  /** default: random */
+  isAuthenticated: boolean
+  /** default: 45 */
+  age: number
+  tags: string[]
+  childs: Child[]
 }
 
-interface TestChild {
-  TestChildNum: number
-  nullableStr?: string
+interface Child {
+  name: string
+  age: number
 }

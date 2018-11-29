@@ -1,26 +1,30 @@
-export const makeHogeHogeMock = (payload: { [key in keyof HogeHoge]?: HogeHoge[key] } = {}): HogeHoge => {
+export const makeHogeHogeMock = (
+    payload: { [key in keyof HogeHoge]?: HogeHoge[key] } = {}
+  ): HogeHoge => {
   return Object.assign({}, {
-      hoge: 'this is mock string'
-    }, payload)
-}
-
-export const makeTestObjMock = (payload: { [key in keyof TestObj]?: TestObj[key] } = {}): TestObj => {
-  return Object.assign({}, {
-      randomBool: (Math.random() < 0.5),
-      myString: 'this is mock string',
-      name: '山田 太郎',
-      price: 300.0,
+      hoge: 'this is mock string',
       num: 1,
-      strArr: new Array(3).toString().split(',').map(() => 'this is mock string'),
-      numArr: new Array(3).toString().split(',').map(() => 1),
-      child: Object.assign({}, makeTestChildMock()),
-      childArr: new Array(3).toString().split(',').map(() => Object.assign({}, makeTestChildMock()))
+      flg: true
     }, payload)
 }
 
-export const makeTestChildMock = (payload: { [key in keyof TestChild]?: TestChild[key] } = {}): TestChild => {
+export const makeUserMock = (
+    payload: { [key in keyof User]?: User[key] } = {}
+  ): User => {
   return Object.assign({}, {
-      TestChildNum: 1,
-      nullableStr: 'this is mock string'
+      name: '山田 太郎',
+      isAuthenticated: (Math.random() < 0.5),
+      age: 45,
+      tags: new Array(3).toString().split(',').map(() => 'this is mock string'),
+      childs: new Array(3).toString().split(',').map(() => Object.assign({}, makeChildMock()))
+    }, payload)
+}
+
+export const makeChildMock = (
+    payload: { [key in keyof Child]?: Child[key] } = {}
+  ): Child => {
+  return Object.assign({}, {
+      name: 'this is mock string',
+      age: 1
     }, payload)
 }
