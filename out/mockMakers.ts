@@ -1,10 +1,10 @@
-export const makeHogeHogeMock = (
-    payload: { [key in keyof HogeHoge]?: HogeHoge[key] } = {}
-  ): HogeHoge => {
+export const makeHogeMock = (
+    payload: { [key in keyof Hoge]?: Hoge[key] } = {}
+  ): Hoge => {
   return Object.assign({}, {
       hoge: 'this is mock string',
-      num: 1,
-      flg: true
+      flg: (Math.random() < 0.5),
+      num: 45
     }, payload)
 }
 

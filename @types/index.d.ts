@@ -1,7 +1,9 @@
-interface HogeHoge {
+interface Hoge {
   hoge: string
-  num: number
+  /** default: random */
   flg: boolean
+  /** default: 45 */
+  num: number
 }
 
 interface User {
